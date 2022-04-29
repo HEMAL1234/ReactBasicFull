@@ -1,46 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
+import './style.css'
 
-export class BINDING_EVENT_HANDLER extends Component {
+export default function CARD() {
 
+    const todoTitle = "Call Family"
+    const todoDesc = "Ipsum no sea sadipscing consetetur vero. Nonumy justo diam sed lorem sit, sed sit clita sit takimata sed sanctus invidunt."
+    const fullDate = new Date();
+    const date = fullDate.getDate() + "/" + fullDate.getMonth() + "/"+ fullDate.getFullYear();
 
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             count : 0
-        }
-        this.handleCounting = this.handleCounting.bind(this)
-    }
-    
-
-
-    handleCounting () {
-        this.setState({
-            count : this.state.count + 1
-        })
-    }
-
-
-    // handleCounting  = () =>{
-    //     this.setState({
-    //         count : this.state.count + 1
-    //     })
-    // }
-
-
-
-
-    render() {
-        return (
-            <div>
-
-                {/* <button onClick={this.handleCounting.bind(this)}>Increment</button> */} */}
-               
-                <button onClick={this.handleCounting}>Increment</button>
-                {this.state.count}
-            </div>
-        )
-    }
+    return (
+        <div>
+            <div  className="card-style">
+                <h3>{todoTitle}</h3>
+                <p>{todoDesc}</p>
+                <p>{date}</p>
+            </div>            
+        </div>
+    )
 }
-
-export default BINDING_EVENT_HANDLER
